@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-center display-1">Part Loss Calc</h1>
+      <h1 className="text-center display-1 funky">PART LOSS CALC</h1>
       <div className="container-sm">
         <div className="col">
           <h2 className="display-3">Inputs:</h2>

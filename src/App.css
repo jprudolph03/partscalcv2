@@ -15,3 +15,10 @@ label,
 h2 {
   text-shadow: 2px 2px 4px white;
 }
+
+.funky {
+  text-decoration: underline;
+  margin-top: 0.2em;
+  font-family: "Bigelow Rules", cursive;
+  font-family: "Monoton", cursive;
+}

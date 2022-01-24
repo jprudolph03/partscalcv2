@@ -13,7 +13,7 @@ function App() {
   let countDiff = (counterTotal - expectedTotal).toFixed(2);
   let scrapPartsByWeight = ((scrapWeight / partWeightG) * 1000).toFixed(2);
   let finalPartCount = counterTotal - scrapPartsByWeight;
-  let percentLoss = (finalPartCount / expectedTotal) * 100 - 100;
+  let percentLoss = ((finalPartCount / expectedTotal) * 100 - 100).toFixed(2);
 
   const handleTotal = (e) => {
     setCoilTotalKG(e.target.value);

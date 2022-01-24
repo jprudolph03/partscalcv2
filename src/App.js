@@ -8,11 +8,10 @@ function App() {
   const [counterTotal, setCounterTotal] = useState("null");
   const [scrapWeight, setScrapWeight] = useState("null");
 
-  let prodWeight = parseInt(coilTotalKG - stdLoss);
-  let expectedTotal = (prodWeight / partWeightG) * 1000;
-  //   let countDiff = expectedTotal - counterTotal;
-  let countDiff = counterTotal - expectedTotal;
-  let scrapPartsByWeight = (scrapWeight / partWeightG) * 1000;
+  let prodWeight = coilTotalKG - stdLoss;
+  let expectedTotal = ((prodWeight / partWeightG) * 1000).toFixed(2);
+  let countDiff = (counterTotal - expectedTotal).toFixed(2);
+  let scrapPartsByWeight = ((scrapWeight / partWeightG) * 1000).toFixed(2);
   let finalPartCount = counterTotal - scrapPartsByWeight;
   let percentLoss = (finalPartCount / expectedTotal) * 100 - 100;
 
@@ -104,17 +103,16 @@ function App() {
             Total Weight After Loss: <strong>{prodWeight}</strong> Kg
           </p>
           <p className="fs-5">
-            Expected Total 100%: <strong>{parseInt(expectedTotal)}</strong>
+            Expected Total 100%: <strong>{expectedTotal}</strong>
           </p>
           <p className="fs-5">
-            Expected vs. Counter = <strong>{parseInt(countDiff)}</strong>
+            Expected vs. Counter = <strong>{countDiff}</strong>
           </p>
           <p className="fs-5">
-            Scrap Parts By Weight ={" "}
-            <strong>{parseInt(scrapPartsByWeight)}</strong>
+            Scrap Parts By Weight = <strong>{scrapPartsByWeight}</strong>
           </p>
           <p className="fs-5">
-            Final Part Count = <strong>{parseInt(finalPartCount)}</strong>
+            Final Part Count = <strong>{finalPartCount}</strong>
           </p>
           <p className="fs-5">
             Percent Loss = <strong>{percentLoss}</strong>
